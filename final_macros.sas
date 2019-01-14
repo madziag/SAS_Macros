@@ -21,7 +21,7 @@
   			from &input. as A 
 			inner join &code_list. as B 
 			on prxmatch(cats('/^',B.&ATC_colname_code_list,'/i'),A.&ATC_colname_input);
-			*prxmatch(cats('/^',A.&ATC_colname_input,'/i'),B.&ATC_colname_code_list)or ;
+			prxmatch(cats('/^',A.&ATC_colname_input,'/i'),B.&ATC_colname_code_list)or ;
             
 	quit;
 %mend create_subset;
